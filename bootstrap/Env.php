@@ -1,4 +1,7 @@
 <?php
+
+namespace Bootstrap;
+
 class Env{
 
     // private $mainDir;
