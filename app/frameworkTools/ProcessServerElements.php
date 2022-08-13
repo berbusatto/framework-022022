@@ -4,6 +4,8 @@ namespace APP\FrameworkTools;
 class ProcessServerElements{
     private static $instance;
 
+    private $documentRoot;
+
     private function __construct(){ // por ser singleton o construtor é private
         // singleton
         // ele não será criado por aqui
@@ -17,5 +19,13 @@ class ProcessServerElements{
         }
 
         return  ProcessServerElements::$instance;
+    }
+
+    public function setDocumentRoot($documentRoot){
+        $this->documentRoot = $documentRoot;
+    }
+
+    public function getDocumentRoot(){
+        return $this->documentRoot;
     }
 }

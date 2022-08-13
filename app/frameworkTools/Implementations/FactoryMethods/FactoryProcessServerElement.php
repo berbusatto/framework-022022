@@ -15,7 +15,10 @@
         }
 
         public function operation(){
+            dd($_SERVER);
             dd($this->processServerElements);
             // continua no próximo episódio...
+
         }
+
     }
