@@ -15,7 +15,8 @@
         }
 
         public function operation(){
-            dd($_SERVER);
+            $this->processServerElements->setDocumentRoot($_SERVER['DOCUMENT_ROOT']);
+            $this->processServerElements->setDocumentRoot($_SERVER['SERVER_NAME']);
             dd($this->processServerElements);
             // continua no próximo episódio...
 

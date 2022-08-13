@@ -5,6 +5,7 @@ class ProcessServerElements{
     private static $instance;
 
     private $documentRoot;
+    private $serverName;
 
     private function __construct(){ // por ser singleton o construtor é private
         // singleton
@@ -27,5 +28,13 @@ class ProcessServerElements{
 
     public function getDocumentRoot(){
         return $this->documentRoot;
+    }
+
+    public function setServerName($serverName){
+        $this->serverName = $serverName;
+    }
+
+    public function getServerName(){
+        return $this->serverName;
     }
 }
