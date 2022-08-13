@@ -7,9 +7,10 @@ require_once("{$mainPosition}\helper\helper.php"); // helper sempre serão usado
 require_once("{$mainPosition}\\vendor\autoload.php"); // é a o arquivo que guarda as configurações dos use
 
 use Bootstrap\Env; // alteramos o require_once para o use Bootstrap
-use App\frameworkTools\ProcessServerElements;
+use App\FrameworkTools\ProcessServerElements;
+use App\FrameworkTools\Implementations\FactoryMethods\FactoryProcessServerElement;
 
 Env::execute();
 
-$processServerElements = ProcessServerElements::start(); // :: para acessar atributo/método static
-dd($processServerElements);
+$factoryProcessServerElement = new FactoryProcessServerElement();
+$factoryProcessServerElement->operation();

@@ -1,6 +1,6 @@
 <?php
 
-namespace APP\frameworkTools;
+namespace APP\FrameworkTools;
 class ProcessServerElements{
     private static $instance;
 
