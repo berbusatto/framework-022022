@@ -7,9 +7,12 @@ class ProcessServerElements{
     private $documentRoot;
     private $serverName;
 
+    private $httpHost;
+    private $uri;
+    private $variables;
+
     private function __construct(){ // por ser singleton o construtor é private
         // singleton
-        // ele não será criado por aqui
         //throw new Exception("This class can not be started by new Proccess, only by start function");
         
     }
@@ -36,5 +39,29 @@ class ProcessServerElements{
 
     public function getServerName(){
         return $this->serverName;
+    }
+
+    public function getHttpHost(){
+        return $this->$httpHost;
+    }
+
+    public function setHttpHost($httpHost){
+        $this->httpHost = $httpHost;
+    }
+
+    public function getUri(){
+        return $this->uri;
+    }
+
+    public function setUri($uri){
+        $this->uri = $uri;
+    }
+
+    public function getVariables(){
+        return $this->variables;
+    }
+
+    public function setVariables($variables){
+        $this->variables = $variables;
     }
 }
