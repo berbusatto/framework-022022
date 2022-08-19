@@ -10,6 +10,7 @@ class ProcessServerElements{
     private $httpHost;
     private $uri;
     private $variables;
+    private $verb;
 
     private function __construct(){ // por ser singleton o construtor é private
         // singleton
@@ -63,5 +64,13 @@ class ProcessServerElements{
 
     public function setVariables($variables){
         $this->variables = $variables;
+    }
+
+    public function getVerb(){
+        return $this->$verb;
+    }
+
+    public function setVerb($verb){
+        $this->$verb = $verb;
     }
 }
