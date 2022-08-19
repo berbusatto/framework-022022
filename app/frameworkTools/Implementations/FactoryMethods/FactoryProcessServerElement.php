@@ -14,7 +14,7 @@
         private $processServerElements;
 
         public function __construct(){
-            $this->processServerElements = ProcessServerElements::start(); // :: para acessar atributo/método static
+            $this->processServerElements = ProcessServerElements::start(); // :: para acessar atributo/função static
 
         }
 
@@ -24,7 +24,9 @@
             $this->processServerElements->setHttpHost($_SERVER['HTTP_HOST']);
             $this->processServerElements->setUri($_SERVER['REQUEST_URI']);
 
-            $this->breakStringInVars($_SERVER['REQUEST_URI']);
+            $variables = $this->breakStringInVars($_SERVER['REQUEST_URI']);
+
+            $this->processServerElements->setVariables($variables);
             dd($this->processServerElements);
             
 
