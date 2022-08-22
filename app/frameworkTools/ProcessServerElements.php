@@ -11,6 +11,7 @@ class ProcessServerElements{
     private $uri;
     private $variables;
     private $verb;
+    private $route;
 
     private function __construct(){ // por ser singleton o construtor é private
         // singleton
@@ -25,6 +26,14 @@ class ProcessServerElements{
 
         return  ProcessServerElements::$instance;
     }
+
+    public function setRoute($route){
+        $this->route = $route;
+    }
+
+    public function getRoute(){
+        return this->$route;
+    }    
 
     public function setDocumentRoot($documentRoot){
         $this->documentRoot = $documentRoot;
