@@ -9,8 +9,11 @@ require_once("{$mainPosition}\\vendor\autoload.php"); // é a o arquivo que guar
 use Bootstrap\Env; // alteramos o require_once para o use Bootstrap
 use App\FrameworkTools\ProcessServerElements;
 use App\FrameworkTools\Implementations\FactoryMethods\FactoryProcessServerElement;
+use App\FrameworkTools\Implementations\route\RouteProcess;
 
 Env::execute();
 
 $factoryProcessServerElement = new FactoryProcessServerElement();
 $factoryProcessServerElement->operation();
+
+RouteProcess::execute();

@@ -6,7 +6,6 @@ class ProcessServerElements{
 
     private $documentRoot;
     private $serverName;
-
     private $httpHost;
     private $uri;
     private $variables;
@@ -32,7 +31,7 @@ class ProcessServerElements{
     }
 
     public function getRoute(){
-        return this->$route;
+        return $this->route;
     }    
 
     public function setDocumentRoot($documentRoot){

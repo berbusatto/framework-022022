@@ -31,7 +31,7 @@
             $this->processServerElements->setVerb($_SERVER['REQUEST_METHOD']);
             $this->processServerElements->setRoute(explode("?", $_SERVER['REQUEST_URI'])[0]);
 
-            dd($this->processServerElements);
+            // dd($this->processServerElements);
             
 
         }
