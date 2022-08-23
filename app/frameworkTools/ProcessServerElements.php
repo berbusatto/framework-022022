@@ -1,6 +1,8 @@
 <?php
 
-namespace APP\FrameworkTools;
+namespace App\FrameworkTools;
+
+
 class ProcessServerElements{
     private static $instance;
 
@@ -51,7 +53,7 @@ class ProcessServerElements{
     }
 
     public function getHttpHost(){
-        return $this->$httpHost;
+        return $this->httpHost;
     }
 
     public function setHttpHost($httpHost){
@@ -75,10 +77,10 @@ class ProcessServerElements{
     }
 
     public function getVerb(){
-        return $this->$verb;
+        return $this->verb;
     }
 
     public function setVerb($verb){
-        $this->$verb = $verb;
+        $this->verb = $verb;
     }
 }
