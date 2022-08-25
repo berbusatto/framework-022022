@@ -2,6 +2,7 @@
 
 namespace App\FrameworkTools;
 
+use Exception;
 
 class ProcessServerElements{
     private static $instance;

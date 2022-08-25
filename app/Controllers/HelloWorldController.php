@@ -9,7 +9,7 @@ class HelloWorldController extends AbstractControllers{
 
         
         $requestVariables = $this->processServerElements->getVariables();
-        $valueOfVariable;
+        $valueOfVariable;  
 
 
         foreach($requestVariables as $value){

@@ -2,9 +2,12 @@
 
 $mainPosition = __DIR__;
 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+header("Content-type: text/html; charset=utf-8");
 
 require_once("{$mainPosition}\helper\helper.php"); // helper sempre serão usados, por isso são requireds
-require_once("{$mainPosition}\\vendor\autoload.php"); // é a o arquivo que guarda as configurações dos use
+require_once("{$mainPosition}\\vendor\autoload.php"); // é o arquivo que guarda as configurações dos use
 
 use Bootstrap\Env; // alteramos o require_once para o use Bootstrap
 use App\FrameworkTools\ProcessServerElements;
