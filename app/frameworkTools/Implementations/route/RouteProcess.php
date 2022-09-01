@@ -18,6 +18,9 @@ class RouteProcess{
                         return (new HelloWorldController)->execute();
                     break;
                 }
+            case 'POST':
+                return (new DataInputController)-> execute();
+
         }
        
     }
