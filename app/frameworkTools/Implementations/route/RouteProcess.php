@@ -5,6 +5,7 @@ namespace App\FrameworkTools\Implementations\Route;
 use App\FrameworkTools\ProcessServerElements;
 use App\Controllers\HelloWorldController;
 use App\Controllers\TrainingQueryController;
+use App\Controllers\TrainingPostController;
 
 class RouteProcess{
     public static function execute(){
@@ -13,19 +14,30 @@ class RouteProcess{
         $routeArray = [];
        
         switch($processServerElements->getVerb()){
+
             case 'GET':
+                
                 switch($processServerElements->getRoute()){
+
                     case '/hello-world':
                         return (new HelloWorldController)->execute();
                     break;
+
                     case '/training-query':
                         return (new TrainingQueryController)->execute();
                     break;
                 }
-            // case 'POST':
-            //     return (new DataInputController)-> execute();
 
+            case 'POST':
+
+                switch($processServerElements->getRoute()){
+                    case '/first-post':
+                        return (new TrainingPostController)-> execute();
+                    break;
+                    
+                }
+        
+            // case 'DELETE':
         }
-       
     }
 }
