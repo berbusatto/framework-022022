@@ -6,24 +6,20 @@ use App\FrameworkTools\Abstracts\Controllers\AbstractControllers;
 use App\FrameworkTools\Database\DatabaseConnection;
 
 class TrainingPostController extends AbstractControllers{
-    public function execute() {
-        $requestsVariables = json_decode($this->processServerElements->getVariables());
-        $valueOfVariable;
+    public function execute() {       
         
-        var_dump($this->processServerElements->getVariables());
+        var_dump($_POST);
+       
 
-        foreach ($requestsVariables as $value) {
-            if($value["name"] == "name") {
-                $valueOfVariable = $value["value"];
-            }
-        }
 
-        $databaseConnection = DatabaseConnection::start()->getPDO();
+       
 
-        $userInsert = $databaseConnection
-                ->query("INSERT INTO user(user.name, user.last_name) VALUES ('{$valueOfVariable}', NULL);")
-                ->fetchAll();
+            // $databaseConnection = DatabaseConnection::start()->getPDO();
 
-        view($users);
+            // $insertQuery = $databaseConnection
+            //         ->query("INSERT INTO user(user.name, user.last_name) VALUES ('{$namee}', '{$lastName}');")
+            //         ->fetchAll();
+
+        
     }
 }
