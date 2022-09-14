@@ -8,7 +8,7 @@ use App\FrameworkTools\Database\DatabaseConnection;
 class TrainingPostController extends AbstractControllers{
     public function execute() {       
         
-        var_dump($_POST);
+        //var_dump($_POST);
        
 
 
