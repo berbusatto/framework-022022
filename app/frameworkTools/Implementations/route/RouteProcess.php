@@ -6,6 +6,7 @@ use App\FrameworkTools\ProcessServerElements;
 use App\Controllers\HelloWorldController;
 use App\Controllers\TrainingQueryController;
 use App\Controllers\TrainingPostController;
+use App\Controllers\InsertDataController;
 
 class RouteProcess{
     public static function execute(){
@@ -33,6 +34,10 @@ class RouteProcess{
                 switch($processServerElements->getRoute()){
                     case '/first-post':
                         return (new TrainingPostController)-> execute();
+                    break;
+
+                    case '/insert-data':
+                        return (new InsertDataController)-> execute();
                     break;
                     
                 }
