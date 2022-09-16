@@ -29,6 +29,10 @@ class ProcessServerElements{
         return  ProcessServerElements::$instance;
     }
 
+    public function getInputJSONData(){ 
+        return (array) json_decode(file_get_contents('php://input'), TRUE);
+    }
+
     public function setRoute($route){
         $this->route = $route;
     }
