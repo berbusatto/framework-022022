@@ -7,6 +7,7 @@ use App\Controllers\HelloWorldController;
 use App\Controllers\TrainingQueryController;
 use App\Controllers\TrainingPostController;
 use App\Controllers\InsertDataController;
+use App\Controllers\ProjectTasksController;
 
 class RouteProcess{
     public static function execute(){
@@ -27,6 +28,51 @@ class RouteProcess{
                     case '/training-query':
                         return (new TrainingQueryController)->execute();
                     break;
+
+                    case '/retorna-carros':
+                        return (new ProjectTasksController)->getCar();
+                        break;
+
+                    case '/retorna-carros-id':
+                        return (new ProjectTasksController)->getCarById(); 
+                        break;
+
+                    case '/retorna-carros-namecar':
+                        return (new ProjectTasksController)->getCarByname();
+                        break;
+
+                    case '/retorna-vendedor':
+                        return (new ProjectTasksController)->getSellers();
+                        break;
+
+                    case '/retorna-vendedor-id':
+                        return (new ProjectTasksController)->getSellerById();
+                        break;
+
+                    case '/retorna-vendedor-nome':
+                        return (new ProjectTasksController)->getSellerByName();
+                        break;
+
+                    case '/retorna-vendas-nome':
+                        return (new ProjectTasksController)->getSellByName();
+                        break;
+
+                    case '/retorna-compradores':
+                        return (new ProjectTasksController)->getBuyers();
+                        break;
+
+                    case '/retorna-compradores-id':
+                        return (new ProjectTasksController)->getBuyersById();
+                        break;
+                    
+                    case '/retorna-comprador-nome':
+                        return (new ProjectTasksController)->getBuyerByName();
+                        break;
+                    case '/retorna-carros-comprador-nome':
+                        return (new ProjectTasksController)->getCarsByBuyerName();
+                        break;
+
+                
                 }
 
             case 'POST':
@@ -39,6 +85,7 @@ class RouteProcess{
                     case '/insert-data':
                         return (new InsertDataController)-> execute();
                     break;
+                            
                     
                 }
         
