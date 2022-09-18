@@ -37,7 +37,7 @@ class RouteProcess{
                         return (new ProjectTasksController)->getCarById(); 
                         break;
 
-                    case '/retorna-carros-namecar':
+                    case '/retorna-carros-nome':
                         return (new ProjectTasksController)->getCarByname();
                         break;
 
@@ -68,6 +68,7 @@ class RouteProcess{
                     case '/retorna-comprador-nome':
                         return (new ProjectTasksController)->getBuyerByName();
                         break;
+                        
                     case '/retorna-carros-comprador-nome':
                         return (new ProjectTasksController)->getCarsByBuyerName();
                         break;
