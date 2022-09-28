@@ -7,6 +7,7 @@ use App\FrameworkTools\Database\DatabaseConnection;
 
 class InsertDataController extends AbstractControllers{
     public function execute() {
+        
 
         $pdo = DatabaseConnection::start()->getPDO();
         $params = $this->processServerElements->getInputJSONData();
