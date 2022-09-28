@@ -30,31 +30,31 @@ class InsertDataController extends AbstractControllers{
                 throw new \Exception('ERROR: Missing age on request');
             }
 
+
+            $query = "INSERT INTO user (name, last_name, age) VALUES (:name, :last_name, :age)";
+            $statement = $pdo->prepare($query);
+
+            $statement->execute([
+                ':name'=> $params["name"],
+                ':last_name'=> $params["lastName"],
+                ':age' => $params["age"]
+            ]);
+   
+            view([
+                'success'=> true
+            ]);
+
         } catch (\Exception $e){
             $response = [
                 'success'=>false,
-                'message'=>$e->getMessage()
+                'message'=>$e->getMessage(),
+                'missingAttribute'=>$attrName
             ];
 
         }
 
         view($response);
 
-        
-
-
-        $query = "INSERT INTO user (name, last_name, age) VALUES (:name, :last_name, :age)";
-        $statement = $pdo->prepare($query);
-
-        $statement->execute([
-            ':name'=> $params["name"],
-            ':last_name'=> $params["lastName"],
-            ':age' => $params["age"]
-        ]);
-   
-        view([
-                'success'=> true
-            ]);
     }
 }
 

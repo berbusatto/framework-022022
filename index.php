@@ -1,6 +1,7 @@
 <?php
 
 $mainPosition = __DIR__;
+error_reporting(E_ERROR | E_PARSE); // ESCONDER MENSAGEM DE ERRO
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
