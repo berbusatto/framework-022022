@@ -9,21 +9,49 @@ class InsertDataController extends AbstractControllers{
     public function execute() {
 
         $pdo = DatabaseConnection::start()->getPDO();
-
         $params = $this->processServerElements->getInputJSONData();
 
-        $query = "INSERT INTO user (name, last_name, age) VALUES (:name, :last_name, :age)";
+        $response = ['success'=>true];
+        $attrName;
 
+        try{
+            if(!$params['name']){
+                $attrName = 'name';
+                throw new \Exception('ERROR: Missing name on request');
+            }
+    
+            if(!$params['lastName']){
+                $attrName = 'lastName';
+                throw new \Exception('ERROR: Missing last name on request'); // USANDO / PARA USAR Exception SEM O USE 
+            }
+    
+            if(!$params['age']){
+                $attrName = 'age';
+                throw new \Exception('ERROR: Missing age on request');
+            }
+
+        } catch (\Exception $e){
+            $response = [
+                'success'=>false,
+                'message'=>$e->getMessage()
+            ];
+
+        }
+
+        view($response);
+
+        
+
+
+        $query = "INSERT INTO user (name, last_name, age) VALUES (:name, :last_name, :age)";
         $statement = $pdo->prepare($query);
 
         $statement->execute([
             ':name'=> $params["name"],
-            ':last_name'=> $params["lastname"],
+            ':last_name'=> $params["lastName"],
             ':age' => $params["age"]
         ]);
-
-       
-
+   
         view([
                 'success'=> true
             ]);
