@@ -63,8 +63,6 @@ class PostLessonController extends AbstractControllers {
             throw new \Exception('ERROR: YEAR must be greater than 1900.');
         }
 
-        // TENTEI USAR O GETDATE MAS NÃO É TÃO SIMPLES QUANTO PARECE
-      
         if($this->params['year'] > date('Y')){
             $this->attrName = 'year';
             throw new \Exception('ERROR: YEAR must be minor or equal actual year.');
