@@ -12,16 +12,17 @@ class PostLessonController extends AbstractControllers {
         try{
             $response = ['success'=>true];
             $this->params = $this->processServerElements->getInputJSONData();
+
             $this->verificationInputVar();
 
-            $query = "INSERT INTO car (name, car_model, year, motorization) VALUES (:name, :car_model, :year, :motorization";
-
-            $statement = $pdo->prepare($query);
+            $query = "INSERT INTO car (name, car_model, year, motorization) VALUES (:name, :car_model, :year, :motorization)";
+            
+            $statement = $this->pdo->prepare($query);
             $statement->execute([
-                ':name' => $params["name"],
-                ':car_model' => $params["car_model"],
-                ':year' => $params["year"],
-                ':motorization' => $params["motorization"]
+                ':name' => $this->params['name'],
+                ':car_model' => $this->params['car_model'],
+                ':year' => $this->params['year'],
+                ':motorization' => $this->params['motorization']
             ]);
             
         } catch (\Exception $e){
@@ -63,13 +64,13 @@ class PostLessonController extends AbstractControllers {
         }
 
 
-        // TENTEI 
-        if($this->params['year'] > getdate(['year'])){
-            $this->attrName = 'year';
-            throw new \Exception('ERROR: YEAR must be minor or equal actual year.');
-        }
+        // // TENTEI 
+        // if($this->params['year'] > getdate(['year'])){
+        //     $this->attrName = 'year';
+        //     throw new \Exception('ERROR: YEAR must be minor or equal actual year.');
+        // }
 
-        
+
         
         
 

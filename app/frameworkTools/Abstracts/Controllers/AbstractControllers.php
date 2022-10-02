@@ -16,7 +16,7 @@ abstract class AbstractControllers {
         header("Content-Type: application/$typeOfAPI");
 
         $this->processServerElements = ProcessServerElements::start();
-        $this->pdo = DatabaseConnection::start()-getPDO();
+        $this->pdo = DatabaseConnection::start()->getPDO();
 
     }
 

@@ -8,6 +8,8 @@ use App\Controllers\TrainingQueryController;
 use App\Controllers\TrainingPostController;
 use App\Controllers\InsertDataController;
 use App\Controllers\ProjectTasksController;
+use App\Controllers\PostLessonController;
+
 
 class RouteProcess{
     public static function execute(){
@@ -86,6 +88,9 @@ class RouteProcess{
                     case '/insert-data':
                         return (new InsertDataController)-> execute();
                     break;
+
+                    case '/carinsert':
+                        return (new PostLessonController)-> execute();
                             
                     
                 }
