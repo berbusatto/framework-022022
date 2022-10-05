@@ -3,7 +3,7 @@
 $mainPosition = __DIR__;
 error_reporting(E_ERROR | E_PARSE); // ESCONDER MENSAGEM DE ERRO
 
-header("Access-Control-Allow-Origin: localhost:5500\cars");
+header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 header("Content-type: text/html; charset=utf-8");
 
