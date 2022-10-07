@@ -1,6 +1,10 @@
 <?php 
 namespace App\FrameworkTools\Implementations\Route;
 
+use App\Controllers\HelloWorldController;
+use App\Controllers\TrainingQueryController;
+use App\Controllers\ProjectTasksController;
+
 trait Get {
     private static function get(){
         switch(self::$processServerElements->getRoute()){
