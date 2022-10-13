@@ -22,8 +22,5 @@
                     "value" => $nameAndValue[1]
                 ];
             }, $arrayWithVars);
-
-           dd($varsOfUrl);
         }
-
     }

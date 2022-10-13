@@ -7,6 +7,4 @@ use App\FrameworkTools\ProcessServerElements;
 abstract class AbstractFactoryMethods {
 
     public abstract function operation();
-
-
 }

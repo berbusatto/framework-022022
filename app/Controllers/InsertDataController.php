@@ -50,7 +50,6 @@ class InsertDataController extends AbstractControllers{
                 'message'=>$e->getMessage(),
                 'missingAttribute'=>$attrName
             ];
-
         }
         view($response);
     }

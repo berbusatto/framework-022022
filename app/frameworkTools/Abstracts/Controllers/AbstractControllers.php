@@ -17,7 +17,5 @@ abstract class AbstractControllers {
 
         $this->processServerElements = ProcessServerElements::start();
         $this->pdo = DatabaseConnection::start()->getPDO();
-
     }
-
 }
