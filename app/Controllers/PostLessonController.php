@@ -66,8 +66,6 @@ class PostLessonController extends AbstractControllers {
         if($this->params['year'] > date('Y')){
             $this->attrName = 'year';
             throw new \Exception('ERROR: YEAR must be minor or equal actual year.');
-        }
-        
+        }        
     }
-
 }
