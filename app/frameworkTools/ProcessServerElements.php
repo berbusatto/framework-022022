@@ -2,8 +2,6 @@
 
 namespace App\FrameworkTools;
 
-
-
 class ProcessServerElements{
     private static $instance;
 
