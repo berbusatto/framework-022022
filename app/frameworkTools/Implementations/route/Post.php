@@ -18,6 +18,7 @@ trait Post {
 
             case '/carinsert':
                 return (new PostLessonController)->execute();
+            break;
         }
     }
 }
