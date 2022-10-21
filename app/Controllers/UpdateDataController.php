@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use App\FrameworkTools\Abstracts\Controllers\AbstractControllers;
 
-
 class UpdateDataController extends AbstractControllers{
 
     public function execute(){
@@ -24,9 +23,7 @@ class UpdateDataController extends AbstractControllers{
                 if ($requestVariable['name'] === 'id_car'){
                     $carId = $requestVariable['value'];
                 }
-            }
-
-           
+            }           
 
             if(!$carId){
                 $missingAttribute = 'id_carnotvalid';
@@ -36,19 +33,16 @@ class UpdateDataController extends AbstractControllers{
             $cars = $this->pdo->query("SELECT * FROM car WHERE id_car = '{$carId}';")
                 ->fetchAll();
 
-
             if(sizeof($cars) === 0){
                 $missingAttribute = 'thiscardoesnotexist';
                 throw new \Exception("Record did not found.");
             }
 
             $params = $this->processServerElements->getInputJSONData();
-            
 
             if ((!$params) || sizeof($params) === 0){
                 $missingAttribute = 'paramsdoesnotexists';
                 throw new \Exception("You need to inform the params attribute.");
-
             }
 
              //MANIPULANDO A STRING QUE SERA O QUERY DO SQL POSTERIORMENTE
