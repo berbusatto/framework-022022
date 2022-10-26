@@ -18,9 +18,7 @@ class BernardoController extends AbstractControllers {
                 "SELECT * FROM petshop;"
         )->fetchAll();
         view($pets);
-
-    }
-    
+    }   
     
     //POST
     public function busatto666(){
@@ -44,8 +42,7 @@ class BernardoController extends AbstractControllers {
                 'message' => $e->getMessage(),
                 'missingAtribute' => $this->attrName            
             ];
-        }
-        
+        }        
         view($response);     
     }
 }
