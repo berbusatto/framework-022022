@@ -4,6 +4,7 @@ namespace App\FrameworkTools\Implementations\Route;
 use App\Controllers\HelloWorldController;
 use App\Controllers\TrainingQueryController;
 use App\Controllers\ProjectTasksController;
+use App\Controllers\BernardoController;
 
 trait Get {
     private static function get(){
@@ -60,6 +61,11 @@ trait Get {
             case '/retorna-carros-comprador-nome':
                 return (new ProjectTasksController)->getCarsByBuyerName();
             break;  
+
+            // TRABALHO 25/10
+            case '/busatto21':
+                return (new BernardoController)->busatto21();
+            break;
 
             }
         }
