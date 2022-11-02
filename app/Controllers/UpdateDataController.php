@@ -71,12 +71,13 @@ class UpdateDataController extends AbstractControllers{
                 }
             }
 
+            // DARIA PRA RESOLVER SÓ COM O SUBSTR (EU ACHO)
+            // dd(substr($updateStructureQuery,0,-1));
+
+
             // PARA REMOVER A VÍRGULA DO FINAL DA STRING
             // CONVERTE-SE STRING EM ARRAY
             $updatedStringInArray = str_split($updateStructureQuery);
-
-            // DARIA PRA RESOLVER SÓ COM O SUBSTR (EU ACHO)
-            // dd(substr($updateStructureQuery,0,-1));
 
             //REMOVE O ÚLTIMO ELEMENTO
             array_pop($updatedStringInArray);
