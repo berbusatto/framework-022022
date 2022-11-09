@@ -9,6 +9,8 @@ trait Put {
             case '/update-data':
                 return (new UpdateDataController)->execute();
             break;
+            case '/busatto000':
+                return (new BernardoController)->busatto000();
         }
     }
 }

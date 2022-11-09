@@ -48,7 +48,7 @@ class BernardoController extends AbstractControllers {
 
 
     // PUT
-    public function bernardo000(){
+    public function busatto000(){
 
     }
 
@@ -56,7 +56,7 @@ class BernardoController extends AbstractControllers {
 
 
     // DELETE
-    public function bernardo91(){
-        
+    public function busatto91(){
+
     }
 }
