@@ -16,10 +16,12 @@ class DatabaseConnection {
         
 
         $this->pdo = new \PDO(
-            "mysql:host=localhost;dbname=trabalho1quartobi;port=3306;", 
+            "mysql:host=localhost;dbname=frameworksenac;port=3306;", 
             "root", 
             ""
         );
+
+        // trabalho1quartobi
     }
 
     public static function start() {
