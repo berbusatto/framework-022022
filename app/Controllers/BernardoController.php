@@ -45,4 +45,18 @@ class BernardoController extends AbstractControllers {
         }        
         view($response);     
     }
+
+
+    // PUT
+    public function bernardo000(){
+
+    }
+
+
+
+
+    // DELETE
+    public function bernardo91(){
+        
+    }
 }
