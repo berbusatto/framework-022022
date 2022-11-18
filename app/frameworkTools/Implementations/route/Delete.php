@@ -4,13 +4,10 @@ namespace App\FrameworkTools\Implementations\Route;
 use App\Controllers\UpdateDataController;
 
 trait Delete {
-    private static function put(){
+    private static function delete(){
         switch(self::$processServerElements->getRoute()){
-            case '':
-                return (new )->execute();
-            break;
-            case '':
-                return (new )->busatto000();
+            case 'busatto91':
+                return (new BernardoController)->busatto91();
         }
     }
 }

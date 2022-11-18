@@ -2,6 +2,7 @@
 namespace App\FrameworkTools\Implementations\Route;
 
 use App\Controllers\UpdateDataController;
+use App\Controllers\BernardoController;
 
 trait Put {
     private static function put(){
