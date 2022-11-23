@@ -91,11 +91,11 @@ class BernardoController extends AbstractControllers {
             }
 
             $updateStructureQuery = '';
-
-
+            $toStatement = [];
+            
             foreach ($params as $key => $value){
 
-                $toStatement = [];
+                
                 if (!in_array($key,['name_pet','type_service'])){
                     $missingAttribute = 'keynotacceptable';
                     throw new \Exception($key);
@@ -105,18 +105,20 @@ class BernardoController extends AbstractControllers {
                 if ($key === 'name_pet'){
                     $updateStructureQuery .= "name_pet = :name_pet,";
                     $toStatement[':name_pet'] = $value;
+
                 }
 
                 if ($key === 'type_service'){
                     $updateStructureQuery .= " type_service = :type_service,";
                     $toStatement[':type_service'] = $value;
-                }                
+                }
+
             }
             
             $newStringElementsSQL = substr($updateStructureQuery, 0,-1);
             
             $sql = "UPDATE petshop SET {$newStringElementsSQL} WHERE id_petshop = {$idPetshop}";
-
+           
             
             //UPDATE petshop SET name_pet = :name_pet,type_service = :type_service WHERE id_petshop = 1
             $statement = $this->pdo->prepare($sql);            

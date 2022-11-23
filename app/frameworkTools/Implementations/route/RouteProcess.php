@@ -14,7 +14,7 @@ class RouteProcess{
     use Get;
     use Post;
     use Put;
-    //use Delete;
+    use Delete;
 
     private static $processServerElements;
 
