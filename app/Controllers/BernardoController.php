@@ -6,17 +6,15 @@ use App\FrameworkTools\Abstracts\Controllers\AbstractControllers;
 use App\FrameworkTools\Database\DatabaseConnection;
 
 class BernardoController extends AbstractControllers {
+
     private $params;
     private $attrName; 
-
 
     //GET
     public function busatto21(){
     
         $databaseConnection = DatabaseConnection::start()->getPDO();
-        $pets = $databaseConnection->query(
-                "SELECT * FROM petshop;"
-        )->fetchAll();
+        $pets = $databaseConnection->query("SELECT * FROM petshop;")->fetchAll();
         view($pets);
     }   
     
@@ -112,7 +110,6 @@ class BernardoController extends AbstractControllers {
                     $updateStructureQuery .= " type_service = :type_service,";
                     $toStatement[':type_service'] = $value;
                 }
-
             }
             
             $newStringElementsSQL = substr($updateStructureQuery, 0,-1);
@@ -140,5 +137,44 @@ class BernardoController extends AbstractControllers {
     // DELETE
     public function busatto91(){
 
+        $requestsVariables = $this->processServerElements->getVariables();
+        $response = ['sucess' => true];
+        $idPetshop;
+        $missingAttribute;
+        
+        try{
+            foreach($requestsVariables as $valueVariable){
+                if($valueVariable['name'] === 'id_petshop'){
+                    $idPetshop = $valueVariable['value'];
+                }
+            }
+            
+            if(!$idPetshop){
+                $missingAttribute = 'id_petshop';
+                throw new \Exception("You need to inform petshop ID");
+            }
+
+            $pets = $this->pdo->query("SELECT * FROM petshop WHERE id_petshop ='{$idPetshop}';")->fetchAll();
+
+            if(sizeof($pets) === 0){
+                $missingAttribute = 'petDoesntExists';
+                throw new \Exception("No record of this pet");
+            }
+
+            $sql = 'DELETE FROM petshop WHERE id_petshop = :id_petshop;';
+    
+            $statement = $this->pdo->prepare($sql);
+            $statement->execute(['id_petshop'=> $idPetshop]);
+          
+
+        } catch(\Exception $e){
+            $response = [
+                'success' => false,
+                'message' => $e->getMessage(),
+                'missingAttribute' => $missingAttribute
+            ];
+        }
+
+        view($response);
     }
 }

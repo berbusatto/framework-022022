@@ -1,6 +1,7 @@
 <?php 
 namespace App\FrameworkTools\Implementations\Route;
 
+use App\Controllers\BernardoController;
 use App\Controllers\DeleteController;
 
 trait Delete {
